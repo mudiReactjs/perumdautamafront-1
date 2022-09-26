@@ -1,0 +1,644 @@
+header .bg-dark-rgba {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.nav-item > .active {
+  color: #ffc107 !important;
+  font-weight: 500;
+  border: 1px solid #ffc107;
+}
+
+.nav-item > .active:hover {
+  color: #000 !important;
+  font-weight: 500;
+  border: 1px solid #ffc107;
+  background-color: #ffc107;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+  color: #fff;
+}
+
+.slider-bg {
+  height: 100%;
+  width: 100%;
+  max-height: 100vh;
+  opacity: 0.8;
+  object-fit: cover;
+}
+
+.carousel-item {
+  height: 100vh !important;
+}
+
+.carousel-caption {
+  top: 25% !important;
+  bottom: 25% !important;
+  height: 100vh;
+}
+
+.carousel-indicators .active {
+  width: 1rem !important;
+  height: 1rem !important;
+  border-radius: 100%;
+  margin: auto 6px !important;
+  border: 3px solid #ffc107 !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+}
+
+.carousel-indicators button {
+  width: 1rem !important;
+  height: 1rem !important;
+  border-radius: 100%;
+  margin: auto 6px !important;
+  border: 3px solid #fff !important;
+  background-color: rgba(255, 255, 255, 0) !important;
+  opacity: 1 !important;
+}
+
+#calendar {
+  zoom: 0.5;
+}
+
+.go-corner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: #198754;
+  border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+  margin-top: -4px;
+  margin-right: -4px;
+  color: white;
+  font-family: courier, sans;
+}
+
+p.small {
+  font-size: 14px;
+  color: black;
+}
+
+h3.title {
+  color: rgb(73, 73, 73);
+}
+
+.card1 img {
+  height: 50px;
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.card1 .img-white {
+  display: none;
+}
+
+.card1:hover .img-white {
+  display: inline;
+  margin-bottom: 10px;
+}
+
+.card1:hover .img-green {
+  display: none;
+}
+
+.card1 span {
+  font-size: 12pt;
+  color: #198754;
+}
+
+.card1 {
+  display: block;
+  position: relative;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  padding: 32px 24px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.card1:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -16px;
+  right: -16px;
+  background: #198754;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+
+.card1:hover:before {
+  transform: scale(28);
+}
+
+.card1:hover i,
+.card1:hover p {
+  transition: all 0.3s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card1:hover h3,
+.card1:hover span {
+  transition: all 0.3s ease-out;
+  color: #ffffff;
+}
+
+/* Kerjasama Investasi */
+
+.section-3 {
+  width: 80%;
+  height: 310px;
+  background-color: #ee9459;
+  border-radius: 5px;
+  margin: auto;
+}
+
+.section-3-img {
+  border-radius: 5px;
+  margin-top: -63%;
+  margin-left: 20px;
+  width: 80%;
+  height: 310px;
+}
+
+.section-3-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  object-fit: cover;
+}
+
+.text-section-3 h1 {
+  font-weight: bold;
+}
+
+.text-section-3 {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.text-section-3 .btn {
+  border-radius: 20px;
+  font-size: 14pt;
+  background-color: #ee9459;
+}
+
+/* Banner */
+.banner-img {
+  width: 100%;
+  height: 200px;
+  opacity: 0.8;
+  filter: brightness(10%);
+  object-fit: cover;
+  position: absolute;
+}
+
+.banner-text {
+  height: 200px;
+  filter: brightness(100%);
+  color: #fff;
+  position: static;
+  overflow: auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+/* Card Bidang Bisnis */
+.card-bidang-bisnis {
+  text-decoration: none;
+  color: black;
+}
+
+.card-bidang-bisnis .card span {
+  color: rgb(148, 144, 144);
+}
+
+.img-hover {
+  display: none;
+}
+
+.card-bidang-bisnis .card:hover {
+  background-color: green;
+  color: white;
+}
+
+.card-bidang-bisnis .card:hover span {
+  color: white;
+}
+
+.card-bidang-bisnis .card:hover img {
+  display: none;
+}
+
+.card-bidang-bisnis .card:hover .img-hover {
+  display: inline;
+}
+
+footer {
+  background-color: #1a1a1a !important;
+}
+
+.footer-hr {
+  width: 20%;
+  padding-bottom: 0.15rem;
+  opacity: 80%;
+}
+
+.footer-text {
+  color: #c0c0c0;
+}
+
+.footer-support {
+  margin: auto 1rem 1rem auto;
+  max-height: 50px;
+}
+
+.jumbotron {
+  position: relative;
+  padding: 0px;
+}
+
+.jumbotron-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
+
+.jumbotron img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.custom-shape-divider-bottom-1649297999 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1649297999 svg {
+  position: relative;
+  display: block;
+  width: calc(150% + 1.3px);
+  height: 300px;
+}
+
+.custom-shape-divider-bottom-1649297999 .shape-fill {
+  fill: #fff;
+}
+
+/* News Page */
+
+.font {
+  font-family: sans-serif;
+}
+
+.news1 {
+  height: 200px;
+}
+
+.news1 img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.news1-sub-title span {
+  float: left;
+}
+
+.news1-sub-title a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.news1-sub-title i {
+  float: right;
+  margin-top: 3px;
+}
+
+.img-description p {
+  font-size: 18pt;
+}
+
+.img-description span {
+  font-size: 18pt;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.img-description span button {
+  height: 40px;
+  width: 40px;
+}
+
+.img-description span img {
+  height: 30px;
+  width: 30px;
+  margin-left: -3px;
+}
+
+.img-description select {
+  font-size: 18pt;
+  height: 60px;
+}
+
+.penghargaan-title1 h1 {
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.penghargaan-title2 h1 {
+  float: right;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+/* RKAPB Detail */
+.detail-title h1 {
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+/* Bidang Bisnis */
+
+.card-bidang-bisnis .card {
+  width: 17rem;
+}
+
+.card-bidang-bisnis .card img {
+  height: 50px;
+  width: 50px;
+  margin-left: 18px;
+}
+
+.card-bidang-bisnis .card span {
+  font-size: 38pt;
+  font-weight: bold;
+  float: right;
+  margin-right: 10px;
+}
+
+.bidang-bisnis-description {
+  text-align: justify;
+  padding: 8px;
+}
+
+.bidang-bisnis-description img {
+  float: left;
+  width: 30%;
+  margin: 0 15px 4px 0;
+}
+
+.bidang-bisnis-description p {
+  text-indent: 0.5in;
+}
+
+.bg-green {
+  background-color: #00a85a !important;
+}
+
+.btn-outline-success {
+  background-color: #fff;
+  color: #000;
+}
+
+.btn-outline-success:hover {
+  background-color: #00a85a;
+  color: #fff;
+}
+
+.btn-outline-success:hover span,
+.btn-outline-success:hover img {
+  color: #fff !important;
+  opacity: 1 !important;
+  filter: saturate(0%) brightness(2000) !important;
+}
+/* laman berita */
+.text-block {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  background-color: black;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  padding-left: 0px;
+  padding-right: 25px;
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+}
+
+.in-img {
+  position: relative;
+}
+.in-img img {
+  border-radius: 10px;
+}
+.smalls {
+}
+.smalls img {
+  width: 20px;
+  height: 20px;
+}
+.text-media {
+  float: right;
+  overflow: auto;
+  display: table;
+}
+.adds img {
+  width: 100%;
+  height: 350px;
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575.98px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.5rem;
+  }
+
+  header .bg-dark-rgba {
+    background-color: #212529 !important;
+  }
+
+  p.small {
+    font-size: 12px;
+    color: black;
+  }
+
+  h3.title {
+    font-size: 14pt;
+  }
+
+  #calendar {
+    zoom: 1;
+  }
+
+  .card1 img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .news1 {
+    height: 120px;
+  }
+
+  .news1 img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .news1-title h4 {
+    margin-top: 5px;
+    font-size: 13pt;
+  }
+
+  .news1-description p {
+    display: none;
+  }
+
+  .img-detail {
+    height: 280px;
+  }
+
+  .img-detail img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .img-description h1 {
+    font-size: 20pt;
+  }
+
+  .img-description p {
+    font-size: 12pt;
+  }
+
+  .img-description span {
+    font-size: 12pt;
+    height: 40px;
+    border-radius: 5px;
+  }
+
+  .img-description span button {
+    height: 30px;
+    width: 30px;
+  }
+
+  .img-description span img {
+    height: 20px;
+    width: 20px;
+    margin-left: -3px;
+  }
+
+  .img-description select {
+    font-size: 12pt;
+    height: 40px;
+  }
+
+  .penghargaan-title1 h1 {
+    font-size: 14pt;
+  }
+
+  .penghargaan-title2 h1 {
+    font-size: 14pt;
+  }
+
+  /* RKAPB Detail */
+  .detail-title h1 {
+    font-size: 16pt;
+    font-weight: bold;
+  }
+
+  /* Bidang Bisnis */
+  .card-bidang-bisnis .card {
+    width: 15rem;
+  }
+
+  .card-bidang-bisnis .card img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .card-bidang-bisnis .card span {
+    font-size: 30pt;
+  }
+
+  .bidang-bisnis-description p {
+    font-size: 10pt;
+  }
+}
+/* detail_produk */
+.small-img-group {
+  display: flex;
+  justify-content: space-between;
+}
+.small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767.98px) {
+  .display-4 {
+    font-size: 2rem;
+  }
+
+  .display-5 {
+    font-size: 1.5rem;
+  }
+
+  header .bg-dark-rgba {
+    background-color: #212529 !important;
+  }
+
+  .text-section-3 a {
+    margin-bottom: 20px;
+  }
+
+  #calendar {
+    zoom: 1;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 991.98px) {
+  header .bg-dark-rgba {
+    background-color: #212529 !important;
+  }
+
+  #calendar {
+    zoom: 0.8;
+  }
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1199.98px) {
+}
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1399.98px) {
+}
