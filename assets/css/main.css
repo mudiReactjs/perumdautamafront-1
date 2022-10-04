@@ -245,6 +245,19 @@ h3.title {
   background-color: green;
   color: white;
 }
+.card-bidang-berita .card:hover {
+  background-color: green;
+  color: white;
+}
+
+.card-bidang-investasi .card:hover {
+  background-color: green;
+  color: white;
+}
+.card-bidang-research .card:hover {
+  background-color: rgb(69, 73, 69);
+  color: white;
+}
 
 .card-bidang-bisnis .card:hover span {
   color: white;
