@@ -20,11 +20,7 @@ html, body {
     margin: 0;
 }
 body {
-    font-family: 'century_gotic';
-}
-@font-face {
-    font-family: century_gotic;
-    src: url(../font/CenturyGothic.ttf);
+    font-family: 'Source Sans Pro';
 }
 input:focus, textarea:focus, button:focus {
     outline: none;

@@ -14,8 +14,6 @@ window.addEventListener('scroll', (event) => {
 // Initialize evo-calendar
 $(document).ready(function () {
     $('#calendar').evoCalendar({
-        language: 'id',
-        format: 'dd/mm/yyyy',
         sidebarDisplayDefault: false,
     })
 })
