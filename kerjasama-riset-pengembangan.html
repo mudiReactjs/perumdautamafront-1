@@ -18,6 +18,20 @@
     <!-- evo calendar -->
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.css" />
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.midnight-blue.css" />
+    <style>
+        .submenu {
+            display: none;
+            position: relative;
+        }
+        .submenu a {
+            position: relative;
+            display: block;
+        }
+        .menu:hover .submenu{
+           margin-left: 35px; 
+           display: block;
+        }
+    </style>
 
     <title>Title | App Name</title>
 </head>
@@ -37,16 +51,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
                         <li class="nav-item me-2">
-                            <a class="nav-link px-2 active" href="#">Home</a>
+                            <a class="nav-link px-2 active" href="dashboard.html">Home</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Tentang Kami</a>
+                            <a class="nav-link px-2" href="tentang-kami.html">Tentang Kami</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Berita</a>
+                            <a class="nav-link px-2" href="laman_berita.html">Berita</a>
                         </li>
                         <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Produk</a>
+                            <a class="nav-link px-2" href="produk.html">Produk</a>
                         </li>
                         <li class="nav-item me-2">
                             <a class="nav-link px-2" href="#">Partner</a>
@@ -70,7 +84,15 @@
         <div class="container-fluid jumbotron">
             <div class="container jumbotron-text">
                 <h1>Home</h1>
-                <h4><a href="#">Home</a> > Kerjasama Riset dan Pengembangan</h4>
+                <table border="0">
+                    <tr>
+                        <td> 
+                          <div class="menu"> <a href="dashboard.html">Home</a>-> <a href="#">Kerjasama Riset dan Investasi</a>
+                          <div class="submenu"><a href="detail-kerjasama-riset-pengembangan.html" class="submenu"> Detail Kerjasama Riset dan Pengembangan</a></div>
+                         </div>
+                      </td>
+                    </tr>
+                  </table>
             </div>
             <img src="./assets/img/Slider BG 1.jpg" alt="" class="img-fluid">
             <div class="custom-shape-divider-bottom-1649297999">
@@ -102,6 +124,7 @@
                                         ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit libero enim
                                         architecto soluta amet necessitatibus, similique at commodi perspiciatis harum
                                         vero tempore excepturi culpa assumenda consectetur a sit? Tempora, perferendis.
+                                       <b>Read More</b>
                                     </p>
                                     <div class="card border-0 bg-secondary" style="--bs-bg-opacity: .2;">
                                         <div class="card-body">

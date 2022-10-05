@@ -232,6 +232,10 @@ h3.title {
   text-decoration: none;
   color: black;
 }
+.card-bidang-bisnis:hover{
+  transition: all 0.3s ease-out;
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .card-bidang-bisnis .card span {
   color: rgb(148, 144, 144);
@@ -241,7 +245,7 @@ h3.title {
   display: none;
 }
 
-.card-bidang-bisnis .card:hover {
+.card-bidang-bisnis {
   background-color: green;
   color: white;
 }
@@ -254,9 +258,42 @@ h3.title {
   background-color: green;
   color: white;
 }
+
 .card-bidang-research .card:hover {
-  background-color: rgb(69, 73, 69);
+  background-color: rgb(62, 105, 62);
   color: white;
+}
+.card-bidang-research:hover:before {
+  transform: scale(28);
+}
+.card-bidang-research:hover a {
+  color: rgba(255, 255, 255, 0.8);
+}
+.card-bidang-research:hover p {
+  color: rgba(255, 255, 255, 0.8);
+}
+.card-bidang-research:before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: -16px;
+  right: -16px;
+  background: #198754;
+  height: 32px;
+  width: 32px;
+  border-radius: 32px;
+  transform: scale(1);
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-out;
+}
+.card-bidang-research {
+  display: block;
+  position: relative;
+  background-color: #f2f8f9;
+  border-radius: 4px;
+  text-decoration: none;
+  z-index: 0;
+  overflow: hidden;
 }
 
 .card-bidang-bisnis .card:hover span {
