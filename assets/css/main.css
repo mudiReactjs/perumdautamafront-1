@@ -85,18 +85,18 @@ header .bg-dark-rgba {
   align-items: center;
   justify-content: center;
   position: absolute;
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   overflow: hidden;
   top: 0;
   right: 0;
   background-color: #198754;
-  border-radius: 0 4px 0 32px;
+  border-radius: 0 3px 0 32px;
 }
 
 .go-arrow {
   margin-top: -4px;
-  margin-right: -4px;
+  margin-right: -3px;
   color: white;
   font-family: 'century_gotic';
 }
