@@ -1,570 +1,521 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css" />
     <!-- Font Awesome 5.15.4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <!-- evo calendar -->
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.css" />
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.midnight-blue.css" />
     <style>
-      ​
-        * {margin: 0; padding: 0;}
+      ​ * {
+        margin: 0;
+        padding: 0;
+      }
 
-.tree ul {
-    padding-top: 20px; position: relative;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
+      .tree ul {
+        padding-top: 20px;
+        position: relative;
 
-.tree li {
-	float: left; text-align: center;
-	list-style-type: none;
-	position: relative;
-	padding: 20px 5px 0 5px;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        justify-content: center;
+        display: flex;
+      }
 
-/*We will use ::before and ::after to draw the connectors*/
+      .tree li {
+        float: left;
+        text-align: center;
+        list-style-type: none;
+        position: relative;
+        padding: 20px 5px 0 5px;
 
-.tree li::before, .tree li::after{
-	content: '';
-	position: absolute; top: 0; right: 50%;
-	border-top: 1px solid #ccc;
-	width: 50%; height: 20px;
-}
-.tree li::after{
-	right: auto; left: 50%;
-	border-left: 1px solid #ccc;
-}
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+      }
 
-/*We need to remove left-right connectors from elements without 
+      /*We will use ::before and ::after to draw the connectors*/
+
+      .tree li::before,
+      .tree li::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 50%;
+        border-top: 1px solid #ccc;
+        width: 50%;
+        height: 20px;
+      }
+      .tree li::after {
+        right: auto;
+        left: 50%;
+        border-left: 1px solid #ccc;
+      }
+
+      /*We need to remove left-right connectors from elements without 
 any siblings*/
-.tree li:only-child::after, .tree li:only-child::before {
-	display: none;
-}
+      .tree li:only-child::after,
+      .tree li:only-child::before {
+        display: none;
+      }
 
-/*Remove space from the top of single children*/
-.tree li:only-child{ padding-top: 0;}
+      /*Remove space from the top of single children*/
+      .tree li:only-child {
+        padding-top: 0;
+      }
 
-/*Remove left connector from first child and 
+      /*Remove left connector from first child and 
 right connector from last child*/
-.tree li:first-child::before, .tree li:last-child::after{
-	border: 0 none;
-}
-/*Adding back the vertical connector to the last nodes*/
-.tree li:last-child::before{
-	border-right: 1px solid #ccc;
-	border-radius: 0 5px 0 0;
-	-webkit-border-radius: 0 5px 0 0;
-	-moz-border-radius: 0 5px 0 0;
-}
-.tree li:first-child::after{
-	border-radius: 5px 0 0 0;
-	-webkit-border-radius: 5px 0 0 0;
-	-moz-border-radius: 5px 0 0 0;
-}
+      .tree li:first-child::before,
+      .tree li:last-child::after {
+        border: 0 none;
+      }
+      /*Adding back the vertical connector to the last nodes*/
+      .tree li:last-child::before {
+        border-right: 1px solid #ccc;
+        border-radius: 0 5px 0 0;
+        -webkit-border-radius: 0 5px 0 0;
+        -moz-border-radius: 0 5px 0 0;
+      }
+      .tree li:first-child::after {
+        border-radius: 5px 0 0 0;
+        -webkit-border-radius: 5px 0 0 0;
+        -moz-border-radius: 5px 0 0 0;
+      }
 
-/*Time to add downward connectors from parents*/
-.tree ul ul::before{
-	content: '';
-	position: absolute; top: 0; left: 50%;
-	border-left: 1px solid #ccc;
-	width: 0; height: 20px;
-}
+      /*Time to add downward connectors from parents*/
+      .tree ul ul::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-left: 1px solid #ccc;
+        width: 0;
+        height: 20px;
+      }
 
-.tree li a{
-	border: 1px solid #ccc;
-	padding: 5px 10px;
-	text-decoration: none;
-	color: #666;
-	font-family: arial, verdana, tahoma;
-	font-size: 11px;
-	display: inline-block;
-	
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-	
-	transition: all 0.5s;
-	-webkit-transition: all 0.5s;
-	-moz-transition: all 0.5s;
-}
+      .tree li a {
+        border: 1px solid #ccc;
+        padding: 5px 10px;
+        text-decoration: none;
+        color: #666;
+        font-family: arial, verdana, tahoma;
+        font-size: 11px;
+        display: inline-block;
 
-/*Time for some hover effects*/
-/*We will apply the hover effect the the lineage of the element also*/
-.tree li a:hover, .tree li a:hover+ul li a {
-	background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-}
-/*Connector styles on hover*/
-.tree li a:hover+ul li::after, 
-.tree li a:hover+ul li::before, 
-.tree li a:hover+ul::before, 
-.tree li a:hover+ul ul::before{
-	border-color:  #94a0b4;
-}
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+      }
+
+      /*Time for some hover effects*/
+      /*We will apply the hover effect the the lineage of the element also*/
+      .tree li a:hover,
+      .tree li a:hover + ul li a {
+        background: #eff1f3;
+        color: #000;
+        border: 1px solid #94a0b4;
+        font-weight: bold;
+        font-size: medium;
+      }
+      /*Connector styles on hover*/
+      .tree li a:hover + ul li::after,
+      .tree li a:hover + ul li::before,
+      .tree li a:hover + ul::before,
+      .tree li a:hover + ul ul::before {
+        border-color: #94a0b4;
+      }
     </style>
 
     <title>Title | App Name</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-rgba fixed-top py-3">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/img/logo PERUMDA JEPARA.png" alt="logo PERUMDA JEPARA" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2 active" href="dashboard.html">Home</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="tentang-kami.html">Tentang Kami</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="laman_berita.html">Berita</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="produk.html">Produk</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Partner</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Kontak</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control bg-transparent border-end-0 border-light rounded-0 text-light"
-                            type="search" placeholder="Cari berita disini..." name="search">
-                        <button class="btn btn-outline-warning border-light rounded-0" type="submit"><i
-                                class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark-rgba fixed-top py-3">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo PERUMDA JEPARA.png" alt="logo PERUMDA JEPARA" width="100" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+              <li class="nav-item me-2">
+                <a class="nav-link px-2 active" href="dashboard.html">Home</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="tentang-kami.html">Tentang Kami</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="laman_berita.html">Berita</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="produk.html">Produk</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="#">Partner</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="#">Kontak</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control bg-transparent border-end-0 border-light rounded-0 text-light" type="search" placeholder="Cari berita disini..." name="search" />
+              <button class="btn btn-outline-warning border-light rounded-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <div class="container-fluid jumbotron">
-            <div class="container jumbotron-text">
-                <div class="container jumbotron-text">
-                    <h1>Home</h1>
-                    <h4><a href="dashboard.html">Home</a> > <a href="detail-tentang-kami.html">Tentang Kami</a></h4>
-                </div>
-            </div>
-            <img src="./assets/img/Slider BG 1.jpg" alt="" class="img-fluid">
-            <div class="custom-shape-divider-bottom-1649297999">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="shape-fill"></path>
-                </svg>
-            </div>
+      <div class="container-fluid jumbotron">
+        <div class="container jumbotron-text">
+          <div class="container jumbotron-text">
+            <h1>Home</h1>
+            <h4><a href="dashboard.html">Home</a> > <a href="detail-tentang-kami.html">Tentang Kami</a></h4>
+          </div>
         </div>
+        <img src="./assets/img/Slider BG 1.jpg" alt="" class="img-fluid" />
+        <div class="custom-shape-divider-bottom-1649297999">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
 
-        <div class="container mt-5">
+      <div class="container mt-5">
+        <div class="row">
+          <div class="col-12 mb-5">
+            <div class="card mb-3 border-0">
+              <div class="row g-0">
+                <div class="col-12 col-lg-4 col-md-4 mb-2">
+                  <img src="assets/img_aboutus/about-us.jpg" class="img-fluid rounded w-200" style="width: 375px; height: 400px" alt="..." />
+                </div>
+                <div class="col-12 col-lg-8 col-md-8">
+                  <div class="card-body pe-0 py-0">
+                    <h1 class="card-title">Selamat Datang di PERUMDA Aneka Usaha Kabupaten Jepara</h1>
+                    <p class="card-text fs-4">
+                      Perusahaan Umum Daerah (PERUMDA) Jepara adalah Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci voluptatum dolor, animi assumenda nobis, excepturi vel esse commodi optio cupiditate illo ad maiores
+                      sapiente, ratione odio harum voluptatem velit impedit enim. Voluptatibus dolor eveniet at ullam alias ex id ipsam unde excepturi ipsa porro officia hic iste voluptatem, necessitatibus voluptatum distinctio accusamus,
+                      totam non autem accusantium molestias recusandae. Excepturi dolor consequatur laboriosam hic.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mb-5">
             <div class="row">
-                <div class="col-12 mb-5">
-                    <div class="card mb-3 border-0">
-                        <div class="row g-0">
-                            <div class="col-12 col-lg-4 col-md-4 mb-2">
-                                <img src="assets/img_aboutus/about-us.jpg"
-                                    class="img-fluid rounded w-200" style="width: 375px;height: 400px;" alt="...">
-                            </div>
-                            <div class="col-12 col-lg-8 col-md-8">
-                                <div class="card-body pe-0 py-0">
-                                    <h1 class="card-title">Selamat Datang di PERUMDA Aneka Usaha Kabupaten Jepara</h1>
-                                    <p class="card-text fs-4">
-                                        Perusahaan Umum Daerah (PERUMDA) Jepara adalah Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Adipisci voluptatum dolor, animi assumenda nobis,
-                                        excepturi vel esse commodi optio cupiditate illo ad maiores sapiente, ratione
-                                        odio harum voluptatem velit impedit enim. Voluptatibus dolor eveniet at ullam
-                                        alias ex id ipsam unde excepturi ipsa porro officia hic iste voluptatem,
-                                        necessitatibus voluptatum distinctio accusamus, totam non autem accusantium
-                                        molestias recusandae. Excepturi dolor consequatur laboriosam hic.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-5">
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="./detail-tentang-kami.html" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
                     <div class="row">
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="./detail-tentang-kami.html"
-                                class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">01</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Tentang PERUMDA Aneka Usaha Jepara
-                                    </h4>
-                                    <p class="card-text">
-                                        Verifikasi dan validasi Production Partner terkait dengan kualitas dan kapasitas
-                                        di dalam melakukan produksi. Selanjutnya Production Partner akan di
-                                        klasifikasikan.
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">02</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Sejarah
-                                    </h4>
-                                    <p class="card-text">
-                                        Production Partner akan dilakukan inkubasi dan pembinaan terkait dengan syarat
-                                        dan ketentuan serta Standard Operasional Proccedure (SOP) yang harus dijalankan.
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">03</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Visi dan Misi
-                                    </h4>
-                                    <p class="card-text">
-                                        Production Partner mempersiapkan segala kebutuhan untuk dapat melakukan supplay
-                                        dan transaksi dengan AIRA. Setiap Production Partner yang baru akan
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">04</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Struktur Organisasi
-                                    </h4>
-                                    <p class="card-text">
-                                        AIRA dan Production Partner melakukan evaluasi terhadap kerjasama yang dilakukan
-                                        serta operasional bisnis yang telah dijalankan dengan mengacu.
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">05</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Legalitas
-                                    </h4>
-                                    <p class="card-text">
-                                        AIRA dan Production Partner melakukan evaluasi terhadap kerjasama yang dilakukan
-                                        serta operasional bisnis yang telah dijalankan dengan mengacu.
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
-                        <div
-                            class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
-                            <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
-                                <div class="card-body pt-0">
-                                    <div class="row">
-                                        <div class="col-6 my-auto">
-                                            <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px"
-                                                alt="">
-                                        </div>
-                                        <div class="col-6 text-end">
-                                            <span class="fw-bold display-3 opacity-25">06</span>
-                                        </div>
-                                    </div>
-                                    <h4 class="card-title">
-                                        Sambutan Direktur
-                                    </h4>
-                                    <p class="card-text">
-                                        Production Partner mempersiapkan segala kebutuhan untuk dapat melakukan supplay
-                                        dan transaksi dengan AIRA. Setiap Production Partner yang baru akan
-                                    </p>
-                                    <div class="go-corner" href="#">
-                                        <div class="go-arrow">
-                                            &rarr;
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">01</span>
+                      </div>
                     </div>
-                </div>
+                    <h4 class="card-title">Tentang PERUMDA Aneka Usaha Jepara</h4>
+                    <p class="card-text">Verifikasi dan validasi Production Partner terkait dengan kualitas dan kapasitas di dalam melakukan produksi. Selanjutnya Production Partner akan di klasifikasikan.</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">02</span>
+                      </div>
+                    </div>
+                    <h4 class="card-title">Sejarah</h4>
+                    <p class="card-text">Production Partner akan dilakukan inkubasi dan pembinaan terkait dengan syarat dan ketentuan serta Standard Operasional Proccedure (SOP) yang harus dijalankan.</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">03</span>
+                      </div>
+                    </div>
+                    <h4 class="card-title">Visi dan Misi</h4>
+                    <p class="card-text">Production Partner mempersiapkan segala kebutuhan untuk dapat melakukan supplay dan transaksi dengan AIRA. Setiap Production Partner yang baru akan</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">04</span>
+                      </div>
+                    </div>
+                    <h4 class="card-title">Struktur Organisasi</h4>
+                    <p class="card-text">AIRA dan Production Partner melakukan evaluasi terhadap kerjasama yang dilakukan serta operasional bisnis yang telah dijalankan dengan mengacu.</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">05</span>
+                      </div>
+                    </div>
+                    <h4 class="card-title">Legalitas</h4>
+                    <p class="card-text">AIRA dan Production Partner melakukan evaluasi terhadap kerjasama yang dilakukan serta operasional bisnis yang telah dijalankan dengan mengacu.</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="col-12 col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 d-flex align-items-stretch mb-3">
+                <a href="#" class="card btn-outline-success shadow-sm text-decoration-none card-bidang-research">
+                  <div class="card-body pt-0">
+                    <div class="row">
+                      <div class="col-6 my-auto">
+                        <img src="assets/img/Bidang Agri Icon Green.png" width="40px" height="40px" alt="" />
+                      </div>
+                      <div class="col-6 text-end">
+                        <span class="fw-bold display-3 opacity-25">06</span>
+                      </div>
+                    </div>
+                    <h4 class="card-title">Sambutan Direktur</h4>
+                    <p class="card-text">Production Partner mempersiapkan segala kebutuhan untuk dapat melakukan supplay dan transaksi dengan AIRA. Setiap Production Partner yang baru akan</p>
+                    <div class="go-corner" href="#">
+                      <div class="go-arrow">&rarr;</div>
+                    </div>
+                  </div>
+                </a>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container-fluid mb-5 px-0">
-            <div class="card bg-green rounded-0 text-light text-center px-4 pt-4 pb-0">
-                <div class="card-title">
-                    <h1>Dewan Pengawas & Dewan Direksi</h1>
-                       
-                    <div class="row mt-4">
-                        <div class="tree">
-                            <ul>   
+      <div class="container-fluid mb-5 px-0">
+        <div class="card bg-green rounded-0 text-light text-center justify-content-center pt-4 pb-0">
+          <div class="card-title">
+            <h1>Dewan Pengawas & Dewan Direksi</h1>
+          </class>
+                <div class="tree">
+                  <ul>
+                    <li>
+                      <a href="#" class="fs-6"
+                        ><img src="assets/css/images_tentangkami/1.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                        <p></p>
+                        Komisaris</a
+                      >
+
+                      <ul>
+                        <li>
+                          <a href="#" class="fs-6"
+                            ><img src="assets/css/images_tentangkami/2.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                            <p></p>
+                            Direktur Utama</a
+                          >
+                          <ul>
+                            <li>
+                              <a href="#" class="fs-6"
+                                ><img src="assets/css/images_tentangkami/3.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                <p></p>
+                                Direktur Pemasaran</a
+                              >
+                            </li>
+                            <li>
+                              <a href="#" class="fs-6"
+                                ><img src="assets/css/images_tentangkami/4.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                <p></p>
+                                Diretur Pariwisata</a
+                              >
+                              <ul>
                                 <li>
-                                    <a href="#"><img src="assets/css/images_tentangkami/1.jpg"  style="vertical-align: text-bottom;"><p></p>Komisaris</a>
-                                   
-                                    <ul>
-                                         <li>
-                                            <a href="#"><img src="assets/css/images_tentangkami/2.jpg"  style="vertical-align: text-bottom;"><p></p>Direktur Utama</a>
-                                            <ul>
-                                                <li><a href="#"><img src="assets/css/images_tentangkami/3.jpg"  style="vertical-align: text-bottom;"><p></p>Direktur Pemasaran</a></li>
-                                                <li>
-                                                    <a href="#"><img src="assets/css/images_tentangkami/4.jpg"  style="vertical-align: text-bottom;"><p></p>Diretur Pariwisata</a>
-                                                    <ul>
-                                                        <li>
-                                                            <a href="#"><img src="assets/css/images_tentangkami/5.jpg"  style="vertical-align: text-bottom;"><p></p>Manager Fasilitas</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#"><img src="assets/css/images_tentangkami/2.jpg"  style="vertical-align: text-bottom;"><p></p>Manager Keuangan</a>
-                                                        </li>
-                                                        <li>
-                                                            <a href="#"><img src="assets/css/images_tentangkami/3.jpg"  style="vertical-align: text-bottom;"><p></p>Manager Periklanan</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                                <li><a href="#"><img src="assets/css/images_tentangkami/3.jpg"  style="vertical-align: text-bottom;"><p></p>Direktur Operasional</a></li>
-                                                <li><a href="#"><img src="assets/css/images_tentangkami/2.jpg"  style="vertical-align: text-bottom;"><p></p>Direktur Teknologi Operasional</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
+                                  <a href="#" class="fs-6"
+                                    ><img src="assets/css/images_tentangkami/5.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                    <p></p>
+                                    Manager Fasilitas</a
+                                  >
                                 </li>
-                            </ul>
-                        </div>
-                    </div>
+                                <li>
+                                  <a href="#" class="fs-6"
+                                    ><img src="assets/css/images_tentangkami/2.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                    <p></p>
+                                    Manager Keuangan</a
+                                  >
+                                </li>
+                                <li>
+                                  <a href="#" class="fs-6"
+                                    ><img src="assets/css/images_tentangkami/3.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                    <p></p>
+                                    Manager Periklanan</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+                            <li>
+                              <a href="#" class="fs-6"
+                                ><img src="assets/css/images_tentangkami/2.jpg" class="rounded" width="150" style="vertical-align: text-bottom" />
+                                <p></p>
+                                Direktur Teknologi<br />
+                                Operasional</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </div>
-            </div>
+          </div>
         </div>
+      </div>
 
-        <div class="container my-5">
-            <div class="row flex-row-reverse">
-                <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 p-4 my-auto">
-                    <img src="./assets/img/invertasi-img.jpg" class="img-fluid rounded-3" alt="">
+      <div class="container my-5">
+        <div class="row flex-row-reverse">
+          <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 p-4 my-auto">
+            <img src="./assets/img/invertasi-img.jpg" class="img-fluid rounded-3" alt="" />
+          </div>
+          <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 p-4 my-auto">
+            <h1 class="mb-5">Perumda Aneka Usaha Jepara Fokus Kerja Tahun 2022</h1>
+            <div class="mb-3 row fw-bold">
+              <div class="col-6 text-start">Market Strategy</div>
+              <div class="col-6 mt-1 text-end">80%</div>
+              <div class="col-12">
+                <div class="progress">
+                  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <div class="col-12 col-xxl-6 col-xl-6 col-lg-6 p-4 my-auto">
-                    <h1 class="mb-5">Perumda Aneka Usaha Jepara Fokus Kerja Tahun 2022</h1>
-                    <div class="mb-3 row fw-bold">
-                        <div class="col-6 text-start">
-                            Market Strategy
-                        </div>
-                        <div class="col-6 mt-1 text-end">
-                            80%
-                        </div>
-                        <div class="col-12">
-                            <div class="progress">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                    role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3 row fw-bold">
-                        <div class="col-6 text-start">
-                            Financial Support
-                        </div>
-                        <div class="col-6 mt-1 text-end">
-                            95%
-                        </div>
-                        <div class="col-12">
-                            <div class="progress">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                    role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mb-3 row fw-bold">
-                        <div class="col-6 text-start">
-                            Online Reporting
-                        </div>
-                        <div class="col-6 mt-1 text-end">
-                            90%
-                        </div>
-                        <div class="col-12">
-                            <div class="progress">
-                                <div class="progress-bar bg-success progress-bar-striped progress-bar-animated"
-                                    role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
-                                    aria-valuemax="100"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+            <div class="mb-3 row fw-bold">
+              <div class="col-6 text-start">Financial Support</div>
+              <div class="col-6 mt-1 text-end">95%</div>
+              <div class="col-12">
+                <div class="progress">
+                  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+            <div class="mb-3 row fw-bold">
+              <div class="col-6 text-start">Online Reporting</div>
+              <div class="col-6 mt-1 text-end">90%</div>
+              <div class="col-12">
+                <div class="progress">
+                  <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
+      </div>
     </main>
 
-    <footer class=" footer mt-auto py-3">
-        <div class="container pt-5 mt-4 text-light">
-            <div class="row lh-lg">
-                <div class="col-12 col-lg-4 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        About Us
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <p class="footer-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut
-                        quaerat sapiente est ratione,
-                        eveniet
-                        illo accusamus pariatur. A at recusandae amet optio in soluta
-                        fugiat voluptatem dolore, possimus
-                        adipisci doloribus?
-                    </p>
-                    <p>
-                        <a class="link-light me-3" href=""><i class="fab fa-facebook"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-linkedin"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-google-plus"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-github"></i></a>
-                    </p>
-                </div>
-                <div class="col-12 col-lg-2 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        Quick Link
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <ul class="list-unstyled">
-                        <li><a class="text-decoration-none footer-text" href="">About
-                                Us</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Our
-                                Client</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Services</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Blog
-                                Posts</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Contact
-                                Us</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-2 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        Contact Info
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <ul class="footer-text list-unstyled">
-                        <li>Jl. Raya Jepara</li>
-                        <li>0812-3456-7890</li>
-                        <li>info@example.com</li>
-                        <li>www.example.com</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-4 col-md-6">
-                    <h3 class="mb-0">
-                        Suported By
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                </div>
-                <div class="col-12 text-center py-3 footer-text">
-                    &copy; 2022 Perumda Aneka Usaha Jepara
-                </div>
-            </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container pt-5 mt-4 text-light">
+        <div class="row lh-lg">
+          <div class="col-12 col-lg-4 col-md-6">
+            <h3 class="fw-bold mb-0">About Us</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <p class="footer-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat sapiente est ratione, eveniet illo accusamus pariatur. A at recusandae amet optio in soluta fugiat voluptatem dolore, possimus adipisci doloribus?
+            </p>
+            <p>
+              <a class="link-light me-3" href=""><i class="fab fa-facebook"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-linkedin"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-twitter"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-google-plus"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-github"></i></a>
+            </p>
+          </div>
+          <div class="col-12 col-lg-2 col-md-6">
+            <h3 class="fw-bold mb-0">Quick Link</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <ul class="list-unstyled">
+              <li><a class="text-decoration-none footer-text" href="">About Us</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Our Client</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Services</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Blog Posts</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-2 col-md-6">
+            <h3 class="fw-bold mb-0">Contact Info</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <ul class="footer-text list-unstyled">
+              <li>Jl. Raya Jepara</li>
+              <li>0812-3456-7890</li>
+              <li>info@example.com</li>
+              <li>www.example.com</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 col-md-6">
+            <h3 class="mb-0">Suported By</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+          </div>
+          <div class="col-12 text-center py-3 footer-text">&copy; 2022 Perumda Aneka Usaha Jepara</div>
         </div>
+      </div>
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -574,6 +525,5 @@ right connector from last child*/
 
     <!-- Evo Calendar -->
     <script src="./assets/evo-calendar-master/js/evo-calendar.js"></script>
-</body>
-
+  </body>
 </html>

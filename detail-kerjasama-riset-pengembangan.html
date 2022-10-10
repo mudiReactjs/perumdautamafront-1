@@ -1,373 +1,291 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Bootstrap CSS -->
-    <link href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./assets/bootstrap-5.1.3-dist/css/bootstrap.min.css" rel="stylesheet" />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/main.css" />
 
     <!-- Font Awesome 5.15.4 -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
     <!-- evo calendar -->
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.css" />
     <link rel="stylesheet" type="text/css" href="./assets/evo-calendar-master/css/evo-calendar.midnight-blue.css" />
     <style>
-        .submenu {
-            display: none;
-            position: relative;
-        }
-        .submenu a {
-            position: relative;
-            display: block;
-        }
-        .menu:hover .submenu{
-           margin-left: 35px; 
-           display: block;
-        }
+      .submenu {
+        display: none;
+        position: relative;
+      }
+      .submenu a {
+        position: relative;
+        display: block;
+      }
+      .menu:hover .submenu {
+        margin-left: 35px;
+        display: block;
+      }
     </style>
     <title>Title | App Name</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark-rgba fixed-top py-3">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="./assets/img/logo PERUMDA JEPARA.png" alt="logo PERUMDA JEPARA" width="100">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2 active" href="dashboard.html">Home</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="tentang-kami.html">Tentang Kami</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="laman_berita.html">Berita</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="produk.html">Produk</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Partner</a>
-                        </li>
-                        <li class="nav-item me-2">
-                            <a class="nav-link px-2" href="#">Kontak</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex">
-                        <input class="form-control bg-transparent border-end-0 border-light rounded-0 text-light"
-                            type="search" placeholder="Cari berita disini..." name="search">
-                        <button class="btn btn-outline-warning border-light rounded-0" type="submit"><i
-                                class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
-        </nav>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark-rgba fixed-top py-3">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="./assets/img/logo PERUMDA JEPARA.png" alt="logo PERUMDA JEPARA" width="100" />
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+              <li class="nav-item me-2">
+                <a class="nav-link px-2 active" href="dashboard.html">Home</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="tentang-kami.html">Tentang Kami</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="laman_berita.html">Berita</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="produk.html">Produk</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="#">Partner</a>
+              </li>
+              <li class="nav-item me-2">
+                <a class="nav-link px-2" href="#">Kontak</a>
+              </li>
+            </ul>
+            <form class="d-flex">
+              <input class="form-control bg-transparent border-end-0 border-light rounded-0 text-light" type="search" placeholder="Cari berita disini..." name="search" />
+              <button class="btn btn-outline-warning border-light rounded-0" type="submit"><i class="fas fa-search"></i></button>
+            </form>
+          </div>
+        </div>
+      </nav>
     </header>
 
     <main>
-        <div class="container-fluid jumbotron">
-            <div class="container jumbotron-text">
-                <h1>Home</h1>
-                <table border="0">
-                    <tr>
-                        <td> 
-                          <div class="menu"> <a href="#">Home</a>-> <a href="#">Kerjasama Riset dan Investasi</a>
-                          <div class="submenu"><a href="detail-kerjasama-riset-pengembangan.html" class="submenu"> Detail Kerjasama Riset dan Pengembangan</a></div>
-                         </div>
-                      </td>
-                    </tr>
-                  </table>
-            </div>
-            <img src="./assets/img/Slider BG 1.jpg" alt="" class="img-fluid">
-            <div class="custom-shape-divider-bottom-1649297999">
-                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
-                    preserveAspectRatio="none">
-                    <path
-                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                        class="shape-fill"></path>
-                </svg>
-            </div>
+      <div class="container-fluid jumbotron">
+        <div class="container jumbotron-text">
+          <h1>Home</h1>
+          <table border="0">
+            <tr>
+              <td>
+                <div class="menu">
+                  <a href="#">Home</a>-> <a href="#">Kerjasama Riset dan Investasi</a>
+                  <div class="submenu"><a href="detail-kerjasama-riset-pengembangan.html" class="submenu"> Detail Kerjasama Riset dan Pengembangan</a></div>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
+        <img src="./assets/img/Slider BG 1.jpg" alt="" class="img-fluid" />
+        <div class="custom-shape-divider-bottom-1649297999">
+          <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              class="shape-fill"
+            ></path>
+          </svg>
+        </div>
+      </div>
 
-        <div class="container my-5">
-            <div class="row">
+      <div class="container my-5">
+        <div class="row">
+          <!-- judul, waktu, dan kategori -->
+          <div class="col-12">
+            <h1 class="fw-bold">Kerjasama Riset dan Pengembangan Pengolahan Kompos Untuk Pupuk Ketela Pohon Pandesi Dalam Upaya Pengurangan Pemakaian Penggunaan Pupuk Kimia.</h1>
+            <p class="fw-light text-success fs-4 mb-0">Minggu, 14 Maret 2022 Pukul 14:00 WIB</p>
+            <p class="fw-light text-success fs-4">
+              Kategori :
+              <a href="#" class="fw-bold link-success text-decoration-none"> Kerjasama Riset dan Pengembangan </a>
+            </p>
+          </div>
 
-                <!-- judul, waktu, dan kategori -->
-                <div class="col-12">
-                    <h1 class="fw-bold">
-                        Kerjasama Riset dan Pengembangan Pengolahan Kompos Untuk Pupuk Ketela Pohon Pandesi Dalam
-                        Upaya Pengurangan Pemakaian Penggunaan Pupuk Kimia.
-                    </h1>
-                    <p class="fw-light text-success fs-4 mb-0">Minggu, 14 Maret 2022 Pukul 14:00 WIB</p>
-                    <p class="fw-light text-success fs-4">Kategori :
-                        <a href="#" class="fw-bold link-success text-decoration-none">
-                            Kerjasama Riset dan Pengembangan
-                        </a>
-                    </p>
-                </div>
+          <!-- sampul -->
+          <div class="col-12 col-xxl-7 col-xl-7 col-lg-7 mb-3">
+            <img src="./assets/img/detail-kerjasama-riset.png" alt="" class="img-fluid rounded w-100" style="max-height: 26.25rem; object-fit: cover" />
+          </div>
 
-                <!-- sampul -->
-                <div class="col-12 col-xxl-7 col-xl-7 col-lg-7 mb-3">
-                    <img src="./assets/img/detail-kerjasama-riset.png" alt=""
-                    class="img-fluid rounded w-100"  style="max-height: 26.25rem; object-fit: cover;">
-                </div>
-
-                <!-- informasi lain -->
-                <div class="col-12 col-xxl-5 col-xl-5 col-lg-5">
-                    <div class="card border-0 rounded-0 bg-secondary"
-                        style="--bs-bg-opacity: .15;max-height: 26.25rem; overflow: auto;">
-                        <div class="card-body">
-                            <h4 class="card-title">Informasi Lain</h4>
-                            <div class="row">
-                                <div class="col-12 mb-1">
-                                    <div class="card border-0 rounded-0 card-bidang-research">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="assets/image_detailresearch/research.jpg"
-                                                    class="img-fluid rounded-start w-100 p-1"
-                                                    style="max-height: 100px; object-fit: cover;float: left;" alt="...">
-                                            </div>
-                                            <div class="col-md-8 p-0 mx-0">
-                                                <div class="card-body m-0 px-2 py-0">
-                                                    <a href="#"
-                                                        class="fs-5 card-link text-decoration-none link-secondary">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                        Aliquam
-                                                        laudantium odio
-                                                    </a>
-                                                </div>
-
-                                            </div>
-                                            <div class="go-corner" href="#">
-                                                <div class="go-arrow">
-                                                    &rarr;
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-1">
-                                    <div class="card border-0 rounded-0  card-bidang-research">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="assets/image_detailresearch/research.jpg"
-                                                    class="img-fluid rounded-start w-100 p-1"
-                                                    style="max-height: 100px; object-fit: cover;" alt="...">
-                                            </div>
-                                            <div class="col-md-8 p-0 mx-0">
-                                                <div class="card-body m-0 px-2 py-0">
-                                                    <a href="#"
-                                                        class="fs-5 card-link text-decoration-none link-secondary">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                        Aliquam
-                                                        laudantium odio
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="go-corner" href="#">
-                                                <div class="go-arrow">
-                                                    &rarr;
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-1">
-                                    <div class="card border-0 rounded-0 card-bidang-research">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="assets/image_detailresearch/research.jpg"
-                                                    class="img-fluid rounded-start w-100 p-1"
-                                                    style="max-height: 100px; object-fit: cover;" alt="...">
-                                            </div>
-                                            <div class="col-md-8 p-0 mx-0">
-                                                <div class="card-body m-0 px-2 py-0">
-                                                    <a href="#"
-                                                        class="fs-5 card-link text-decoration-none link-secondary">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                        Aliquam
-                                                        laudantium odio
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="go-corner" href="#">
-                                                <div class="go-arrow">
-                                                    &rarr;
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 mb-1">
-                                    <div class="card border-0 rounded-0 card-bidang-research">
-                                        <div class="row g-0">
-                                            <div class="col-md-4">
-                                                <img src="assets/image_detailresearch/research.jpg"
-                                                    class="img-fluid rounded-start w-100 p-1"
-                                                    style="max-height: 100px; object-fit: cover;" alt="...">
-                                            </div>
-                                            <div class="col-md-8 p-0 mx-0">
-                                                <div class="card-body m-0 px-2 py-0">
-                                                    <a href="#"
-                                                        class="fs-5 card-link text-decoration-none link-secondary">
-                                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                                                        Aliquam
-                                                        laudantium odio
-                                                    </a>
-                                                </div>
-                                            </div>
-                                            <div class="go-corner" href="#">
-                                                <div class="go-arrow">
-                                                    &rarr;
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+          <!-- informasi lain -->
+          <div class="col-12 col-xxl-5 col-xl-5 col-lg-5">
+            <div class="card border-0 rounded-0 bg-secondary" style="--bs-bg-opacity: 0.15; max-height: 26.25rem; overflow: auto">
+              <div class="card-body">
+                <h4 class="card-title">Informasi Lain</h4>
+                <div class="row">
+                  <div class="col-12 mb-1">
+                    <div class="card border-0 rounded-0 card-bidang-research">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/image_detailresearch/research.jpg" class="img-fluid rounded-start w-100 p-1" style="max-height: 100px; object-fit: cover; float: left" alt="..." />
                         </div>
+                        <div class="col-md-8 p-0 mx-0">
+                          <div class="card-body m-0 px-2 py-0">
+                            <a href="#" class="fs-6 card-link text-decoration-none link-secondary"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam laudantium odio </a>
+                          </div>
+                        </div>
+                        <div class="go-corner" href="#">
+                          <div class="go-arrow">&rarr;</div>
+                        </div>
+                      </div>
                     </div>
+                  </div>
+                  <div class="col-12 mb-1">
+                    <div class="card border-0 rounded-0 card-bidang-research">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/image_detailresearch/research.jpg" class="img-fluid rounded-start w-100 p-1" style="max-height: 100px; object-fit: cover" alt="..." />
+                        </div>
+                        <div class="col-md-8 p-0 mx-0">
+                          <div class="fs-6 card-body m-0 px-2 py-0">
+                            <a href="#" class="card-link text-decoration-none link-secondary"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam laudantium odio </a>
+                          </div>
+                        </div>
+                        <div class="go-corner" href="#">
+                          <div class="go-arrow">&rarr;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-1">
+                    <div class="card border-0 rounded-0 card-bidang-research">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/image_detailresearch/research.jpg" class="img-fluid rounded-start w-100 p-1" style="max-height: 100px; object-fit: cover" alt="..." />
+                        </div>
+                        <div class="col-md-8 p-0 mx-0">
+                          <div class="card-body m-0 px-2 py-0">
+                            <a href="#" class="fs-6 card-link text-decoration-none link-secondary"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam laudantium odio </a>
+                          </div>
+                        </div>
+                        <div class="go-corner" href="#">
+                          <div class="go-arrow">&rarr;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 mb-1">
+                    <div class="card border-0 rounded-0 card-bidang-research">
+                      <div class="row g-0">
+                        <div class="col-md-4">
+                          <img src="assets/image_detailresearch/research.jpg" class="img-fluid rounded-start w-100 p-1" style="max-height: 100px; object-fit: cover" alt="..." />
+                        </div>
+                        <div class="col-md-8 p-0 mx-0">
+                          <div class="card-body m-0 px-2 py-0">
+                            <a href="#" class="fs-6 card-link text-decoration-none link-secondary"> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam laudantium odio </a>
+                          </div>
+                        </div>
+                        <div class="go-corner" href="#">
+                          <div class="go-arrow">&rarr;</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-
-                <!-- isi konten -->
-                <div class="col-12 mt-4 mb-5 fs-5">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas cumque blanditiis itaque excepturi
-                    odio magnam qui, nam praesentium dolor ducimus fuga ullam eveniet harum repudiandae voluptatem
-                    voluptas? Possimus quo aliquid, pariatur repudiandae reiciendis quis necessitatibus quas repellat
-                    quos, expedita similique. Cupiditate explicabo voluptates nisi harum, labore delectus excepturi!
-                    Quia esse sit fuga doloremque eius asperiores ut odit officiis assumenda unde amet, qui, eaque
-                    atque? Cumque rerum dolorem ullam cupiditate nostrum voluptatum, soluta deserunt aliquam, ad, earum
-                    voluptates. Enim, laborum! Delectus nisi velit nesciunt explicabo aspernatur incidunt cum! Inventore
-                    aliquam enim voluptatem nesciunt commodi. Repudiandae fugit ad enim assumenda veniam libero, dolorum
-                    aspernatur ratione vitae neque, in nobis nisi, incidunt autem sit reprehenderit suscipit sed
-                    <p><br>
-                    recusandae animi omnis? Fugit cum aliquam eum. Minima dolore inventore, aspernatur sint illo,
-                    nesciunt atque, tenetur ratione soluta laborum unde. Perspiciatis assumenda sunt, labore nobis, a
-                    laborum aspernatur magni dignissimos dolores doloremque laudantium deserunt. Eius totam, earum
-                    repudiandae pariatur dolore explicabo voluptates animi, ratione officiis illum deleniti minus
-                    maiores deserunt hic quo expedita. Placeat adipisci consequuntur praesentium. Ipsum iure similique
-                    nisi autem doloremque maxime illum sed, provident fugiat vel ad ex excepturi aut aperiam debitis!
-                    Provident perspiciatis dolor dolorum, porro, reiciendis tempora vero sed cumque quos ducimus qui
-                    repudiandae non? Facilis aperiam id animi rerum nostrum, quis, magni, qui mollitia quae iusto a
-                    ipsum possimus cupiditate expedita inventore saepe blanditiis voluptates dolorem hic minus libero
-                    iure suscipit ea numquam. Ab veniam voluptatem nobis eaque libero dicta exercitationem delectus
-                    blanditiis, ducimus sequi repellendus consectetur, eveniet a labore sed laboriosam amet in quibusdam
-                    quae quo harum ex consequatur quasi rem. Quam assumenda soluta enim ipsa atque itaque saepe, alias
-                    <p><br>
-                    mollitia eum officia sit ab exercitationem et temporibus similique dolorum eveniet sequi quia nam
-                    rerum minus esse, totam quos repellendus? Perferendis quaerat praesentium totam exercitationem,
-                    nesciunt veritatis ipsam ab impedit at consectetur ea repudiandae cupiditate harum velit dolorum
-                    illum voluptas, suscipit culpa, amet libero eligendi iure facilis ipsa sint! Fugiat, fuga voluptatum
-                    consequatur perspiciatis accusamus aut commodi ea rerum molestiae maiores officiis iste maxime saepe
-                    nulla obcaecati, nostrum provident, enim amet dolor. Necessitatibus illo labore distinctio veniam
-                    consectetur eveniet doloribus est ab, nisi rerum vero quam libero incidunt, eaque dolores molestias
-                    <p><br>
-                    vitae dolorum dolore architecto blanditiis quod! Repudiandae magni earum labore odio autem
-                    reiciendis rem odit, similique deserunt optio. Repudiandae voluptate nobis quis dicta similique
-                    veritatis debitis sunt culpa corrupti at assumenda officiis, aut reiciendis perferendis consectetur
-                    voluptas dolorem corporis omnis nulla? Suscipit quaerat architecto, nobis cum asperiores repellendus
-                    voluptatem beatae iusto id eius ex fuga. Vel molestiae error necessitatibus sequi, libero explicabo
-                    consequuntur facere cum, nam maxime at ea, eaque aut accusantium iste earum! Illum totam numquam
-                    odio similique, ipsum reiciendis facere ipsam facilis aspernatur rem nisi at debitis perferendis
-                    quae labore reprehenderit quo perspiciatis. Non repellat, distinctio tempore id delectus illo!
-                </div>
+              </div>
             </div>
-        </div>
+          </div>
 
+          <!-- isi konten -->
+          <div class="col-12 mt-4 mb-5 fs-5">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quas cumque blanditiis itaque excepturi odio magnam qui, nam praesentium dolor ducimus fuga ullam eveniet harum repudiandae voluptatem voluptas? Possimus quo aliquid,
+            pariatur repudiandae reiciendis quis necessitatibus quas repellat quos, expedita similique. Cupiditate explicabo voluptates nisi harum, labore delectus excepturi! Quia esse sit fuga doloremque eius asperiores ut odit officiis
+            assumenda unde amet, qui, eaque atque? Cumque rerum dolorem ullam cupiditate nostrum voluptatum, soluta deserunt aliquam, ad, earum voluptates. Enim, laborum! Delectus nisi velit nesciunt explicabo aspernatur incidunt cum!
+            Inventore aliquam enim voluptatem nesciunt commodi. Repudiandae fugit ad enim assumenda veniam libero, dolorum aspernatur ratione vitae neque, in nobis nisi, incidunt autem sit reprehenderit suscipit sed
+            <p>
+              <br />
+              recusandae animi omnis? Fugit cum aliquam eum. Minima dolore inventore, aspernatur sint illo, nesciunt atque, tenetur ratione soluta laborum unde. Perspiciatis assumenda sunt, labore nobis, a laborum aspernatur magni
+              dignissimos dolores doloremque laudantium deserunt. Eius totam, earum repudiandae pariatur dolore explicabo voluptates animi, ratione officiis illum deleniti minus maiores deserunt hic quo expedita. Placeat adipisci
+              consequuntur praesentium. Ipsum iure similique nisi autem doloremque maxime illum sed, provident fugiat vel ad ex excepturi aut aperiam debitis! Provident perspiciatis dolor dolorum, porro, reiciendis tempora vero sed cumque
+              quos ducimus qui repudiandae non? Facilis aperiam id animi rerum nostrum, quis, magni, qui mollitia quae iusto a ipsum possimus cupiditate expedita inventore saepe blanditiis voluptates dolorem hic minus libero iure suscipit
+              ea numquam. Ab veniam voluptatem nobis eaque libero dicta exercitationem delectus blanditiis, ducimus sequi repellendus consectetur, eveniet a labore sed laboriosam amet in quibusdam quae quo harum ex consequatur quasi rem.
+              Quam assumenda soluta enim ipsa atque itaque saepe, alias
+            </p>
+
+            <p>
+              <br />
+              mollitia eum officia sit ab exercitationem et temporibus similique dolorum eveniet sequi quia nam rerum minus esse, totam quos repellendus? Perferendis quaerat praesentium totam exercitationem, nesciunt veritatis ipsam ab
+              impedit at consectetur ea repudiandae cupiditate harum velit dolorum illum voluptas, suscipit culpa, amet libero eligendi iure facilis ipsa sint! Fugiat, fuga voluptatum consequatur perspiciatis accusamus aut commodi ea rerum
+              molestiae maiores officiis iste maxime saepe nulla obcaecati, nostrum provident, enim amet dolor. Necessitatibus illo labore distinctio veniam consectetur eveniet doloribus est ab, nisi rerum vero quam libero incidunt, eaque
+              dolores molestias
+            </p>
+
+            <p>
+              <br />
+              vitae dolorum dolore architecto blanditiis quod! Repudiandae magni earum labore odio autem reiciendis rem odit, similique deserunt optio. Repudiandae voluptate nobis quis dicta similique veritatis debitis sunt culpa corrupti
+              at assumenda officiis, aut reiciendis perferendis consectetur voluptas dolorem corporis omnis nulla? Suscipit quaerat architecto, nobis cum asperiores repellendus voluptatem beatae iusto id eius ex fuga. Vel molestiae error
+              necessitatibus sequi, libero explicabo consequuntur facere cum, nam maxime at ea, eaque aut accusantium iste earum! Illum totam numquam odio similique, ipsum reiciendis facere ipsam facilis aspernatur rem nisi at debitis
+              perferendis quae labore reprehenderit quo perspiciatis. Non repellat, distinctio tempore id delectus illo!
+            </p>
+          </div>
+        </div>
+      </div>
     </main>
 
-    <footer class=" footer mt-auto py-3">
-        <div class="container pt-5 mt-4 text-light">
-            <div class="row lh-lg">
-                <div class="col-12 col-lg-4 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        About Us
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <p class="footer-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Ut
-                        quaerat sapiente est ratione,
-                        eveniet
-                        illo accusamus pariatur. A at recusandae amet optio in
-                        soluta
-                        fugiat voluptatem dolore, possimus
-                        adipisci doloribus?
-                    </p>
-                    <p>
-                        <a class="link-light me-3" href=""><i class="fab fa-facebook"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-linkedin"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-google-plus"></i></a>
-                        <a class="link-light me-3" href=""><i class="fab fa-github"></i></a>
-                    </p>
-                </div>
-                <div class="col-12 col-lg-2 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        Quick Link
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <ul class="list-unstyled">
-                        <li><a class="text-decoration-none footer-text" href="">About
-                                Us</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Our
-                                Client</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Services</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Blog
-                                Posts</a></li>
-                        <li><a class="text-decoration-none footer-text" href="">Contact
-                                Us</a></li>
-
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-2 col-md-6">
-                    <h3 class="fw-bold mb-0">
-                        Contact Info
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <ul class="footer-text list-unstyled">
-                        <li>Jl. Raya Jepara</li>
-                        <li>0812-3456-7890</li>
-                        <li>info@example.com</li>
-                        <li>www.example.com</li>
-                    </ul>
-                </div>
-                <div class="col-12 col-lg-4 col-md-6">
-                    <h3 class="mb-0">
-                        Suported By
-                    </h3>
-                    <hr class="footer-hr mb-4 mt-0">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                    <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="">
-                </div>
-                <div class="col-12 text-center py-3 footer-text">
-                    &copy; 2022 Perumda Aneka Usaha Jepara
-                </div>
-            </div>
+    <footer class="footer mt-auto py-3">
+      <div class="container pt-5 mt-4 text-light">
+        <div class="row lh-lg">
+          <div class="col-12 col-lg-4 col-md-6">
+            <h3 class="fw-bold mb-0">About Us</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <p class="footer-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quaerat sapiente est ratione, eveniet illo accusamus pariatur. A at recusandae amet optio in soluta fugiat voluptatem dolore, possimus adipisci doloribus?
+            </p>
+            <p>
+              <a class="link-light me-3" href=""><i class="fab fa-facebook"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-linkedin"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-twitter"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-google-plus"></i></a>
+              <a class="link-light me-3" href=""><i class="fab fa-github"></i></a>
+            </p>
+          </div>
+          <div class="col-12 col-lg-2 col-md-6">
+            <h3 class="fw-bold mb-0">Quick Link</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <ul class="list-unstyled">
+              <li><a class="text-decoration-none footer-text" href="">About Us</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Our Client</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Services</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Blog Posts</a></li>
+              <li><a class="text-decoration-none footer-text" href="">Contact Us</a></li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-2 col-md-6">
+            <h3 class="fw-bold mb-0">Contact Info</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <ul class="footer-text list-unstyled">
+              <li>Jl. Raya Jepara</li>
+              <li>0812-3456-7890</li>
+              <li>info@example.com</li>
+              <li>www.example.com</li>
+            </ul>
+          </div>
+          <div class="col-12 col-lg-4 col-md-6">
+            <h3 class="mb-0">Suported By</h3>
+            <hr class="footer-hr mb-4 mt-0" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+            <img class="footer-support" src="./assets/img/logo PERUMDA JEPARA.png" alt="" />
+          </div>
+          <div class="col-12 text-center py-3 footer-text">&copy; 2022 Perumda Aneka Usaha Jepara</div>
         </div>
+      </div>
     </footer>
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js">
-    </script>
+    <script src="./assets/bootstrap-5.1.3-dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -377,6 +295,5 @@
 
     <!-- Evo Calendar -->
     <script src="./assets/evo-calendar-master/js/evo-calendar.js"></script>
-</body>
-
+  </body>
 </html>
