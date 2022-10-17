@@ -34,8 +34,9 @@ input:focus, textarea:focus, button:focus {
     background-color: #fbfbfb;
     color: #5a5a5a;
     width: 100%;
-    -webkit-box-shadow: 0 5px 25px -10px #8773c1;
-            box-shadow: 0 5px 25px -10px #8773c1;
+    /* -webkit-box-shadow: 0 5px 25px -10px #8773c1;
+            box-shadow: 0 5px 25px -10px #8773c1; */
+    border: #9fe29d solid 1px;
     margin: 0 auto;
     overflow: hidden;
     z-index: 1;
@@ -320,8 +321,8 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty {
     padding: 15px 10px;
-    background-color: rgba(135,115,193,.15);
-    border: 1px solid #8773c1;
+    background-color: rgba(75, 173, 83, 0.15);
+    border: 1px solid #6fc298;
 }
 .event-list > .event-empty > p {
     margin: 0;
