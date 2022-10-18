@@ -326,7 +326,8 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 .event-list > .event-empty > p {
     margin: 0;
-    color: #755eb5;
+    color: #161516;
+    font-weight: bold;
 }
 .event-container {
     position: relative;
